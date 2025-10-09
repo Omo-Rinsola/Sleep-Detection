@@ -15,6 +15,9 @@ class Detect:
         self.threshold = 0.1
 
     def detect(self, frame):
+        if frame is None:
+            print("⚠️ Warning: Received empty frame — skipping detection.")
+            return "No frame received"
         frame.flags.writeable = False
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = self.eye_landmark.face_mesh.process(frame)

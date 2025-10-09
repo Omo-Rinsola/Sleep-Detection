@@ -1,2 +1,7 @@
 # Virtual environment
 backend/sleepvenv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
